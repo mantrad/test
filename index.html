@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greeting Dapp</title>
+    <title>Dapp</title>
 </head>
 <body>
 
@@ -41,6 +41,7 @@ const getContract = async (web3) => {
   return contract;
 };
       async function approve() {
+          console.log("hello")
   const web3 = await getWeb3();
   const accounts = await web3.eth.getAccounts();
   const contract = await getContract(web3);
