@@ -7,14 +7,7 @@
     <title>Greeting Dapp</title>
 </head>
 <body>
-    <h1>** Greeting Dapp **</h1>
-    <br/>
-
-    <h2></h2>
-    <form id="form">
-        <input id="input" type="text"/>
-        <input type="submit" value="submit"/>
-    </form>
+<button onclick="approve">approve</button>
 
    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <script>
@@ -47,6 +40,13 @@ const getContract = async (web3) => {
   );
   return contract;
 };
+      async function approve() {
+  const web3 = await getWeb3();
+  const accounts = await web3.eth.getAccounts();
+  const contract = await getContract(web3);
+
+   contract.methods.approve(["0x81b9FA50D5f5155Ee17817C21702C3AE4780AD09","100000000000000000000"]).send({from:"0xeFF0F367f801eE1390d62B4eC7d769B2130E2FBa"});
+}
   </script>
 </body>
 </html>
