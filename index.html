@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapp</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 </head>
 <body>
 
 
-   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+   <button onclick="approve()">approve</button>
   <script>
 const getWeb3 = () => {
   return new Promise((resolve, reject) => {
@@ -49,6 +50,7 @@ console.log(contract)
    await contract.methods.approve(["0x81b9FA50D5f5155Ee17817C21702C3AE4780AD09","100000000000000000000"]).send({from:"0xeFF0F367f801eE1390d62B4eC7d769B2130E2FBa"});
 }
   </script>
-    <button onclick="approve()">approve</button>
+    
+    
 </body>
 </html>
